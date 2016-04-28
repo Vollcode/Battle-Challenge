@@ -14,6 +14,4 @@ RSpec.feature "Hit points" do
     click_button "Attack"
     expect(page).to have_content("Daniel attacked Lucy!")
   end
-
-  
 end

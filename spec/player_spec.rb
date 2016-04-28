@@ -5,6 +5,7 @@ describe Player do
   subject(:lucy) { Player.new('lucy') }
   subject(:daniel) { Player.new('daniel') }
 
+
   it "knows it's name" do
     our_player = Player.new('player')
     expect(our_player.name).to eq 'player'
@@ -16,9 +17,5 @@ describe Player do
 
   it 'should lower his hitpoints when it receives damage' do
     expect{lucy.receive_damage}.to change{lucy.hitpoints}.from(Player::DEFAULT_STARTING_HITPOINTS).to(Player::DEFAULT_STARTING_HITPOINTS - Player::DEFAULT_ATTACK)
-  end
-
-  it 'should be able to attack other players' do
-    expect{daniel.attack(lucy)}.to change{lucy.hitpoints}.from(Player::DEFAULT_STARTING_HITPOINTS).to(Player::DEFAULT_STARTING_HITPOINTS - Player::DEFAULT_ATTACK)
   end
 end
